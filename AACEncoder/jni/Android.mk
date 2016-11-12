@@ -1,0 +1,54 @@
+# Copyright (C) 2009 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#LOCAL_PATH := $(call my-dir)
+#
+#include $(CLEAR_VARS)
+#
+#LOCAL_MODULE    := AACEncode
+#LOCAL_SRC_FILES := 
+#
+#include $(BUILD_SHARED_LIBRARY)
+
+
+
+LOCAL_PATH := $(call my-dir)
+
+#生成so动态库
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := AACEncode
+
+LOCAL_SRC_FILES := \
+./libfaac/aacquant.c \
+./libfaac/backpred.c \
+./libfaac/bitstream.c \
+./libfaac/channels.c \
+./libfaac/fft.c \
+./libfaac/filtbank.c \
+./libfaac/frame.c \
+./libfaac/huffman.c\
+./libfaac/ltp.c \
+./libfaac/midside.c \
+./libfaac/psychkni.c \
+./libfaac/tns.c \
+./libfaac/util.c \
+./libfaac/kiss_fft/kiss_fft.c \
+./libfaac/kiss_fft/kiss_fftr.c \
+audio_buffer.cpp EasyAACEncoder.cpp EasyAACEncoderAPI.cpp g711.cpp G711AToPcm.cpp g726.cpp G726ToPcm.cpp IDecodeToPcm.cpp PcmToAac.cpp AACEncoder.c
+ 
+LOCAL_LDLIBS += -llog
+
+
+include $(BUILD_SHARED_LIBRARY)

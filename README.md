@@ -1,0 +1,2 @@
+# AACEncode
+Android G711(PCMA/PCMU)、G726、PCM音频转码到AAC

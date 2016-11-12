@@ -213,4 +213,32 @@ Java代码文件方法比如我的：
 就简单的说这些吧，提醒下对于第三步与第四步问题估计比较多，有问题那就多多去谷歌，问题会解决的！
 
 
+## 附注 ##
+使用方法示例：
+
+	   /**
+	     * g711a转码为aac
+	     *
+	     * @param cachePath  文件路径
+	     * @param inFilename 输入音频文件名
+	     * @param outAacname 输出音频文件名
+	     */
+	    public void g711toAAC(final String cachePath, final String inFilename, final String outAacname) {
+	        new Thread(new Runnable() {
+	            @Override
+	            public void run() {
+	                JNIAACEncode.init(JNIAACEncode.Law_ALaw);
+	                File audiofile = new File(cachePath, inFilename);
+	                File audiofile2 = new File(cachePath, outAacname);
+	                int encode = JNIAACEncode.encode(audiofile.getAbsolutePath(), audiofile2.getAbsolutePath());
+	                if (encode == 0) {
+	                    ToastUtil.showMessage("声音转码成功");
+	               }else{
+	                    ToastUtil.showMessage("声音转码失败");
+	                }
+	            }
+	        }).start();
+	    }
+
+
 

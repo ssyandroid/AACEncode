@@ -48,11 +48,11 @@ EasyAACEncoder目前支持的音视频格式：
 现在简单说下
 在第三步中要先去掉无用的文件，我直接把非.c源文件与.h头文件的直接剔除如下图我的：
 
-![](http://i.imgur.com/jEuCX1b.png)
+![](https://github.com/ssyandroid/AACEncode/raw/master/jni.png)
 
 该开源库也采用了libfacc如图：
 
-![](http://i.imgur.com/xcRJmZJ.png)
+![](https://github.com/ssyandroid/AACEncode/raw/master/lib.png)
 
 之后如果仍然会有报错的文件，找到报错的所在地再解决，有的需要项目里关联C/C++ build才可以，有的还需要配置环境，具体网上教程有很多，就不在累赘，找到适合自己的就行。
 还有就是c的方法与c++的方法有的地方不一样的需要格外注意下比如说env。
